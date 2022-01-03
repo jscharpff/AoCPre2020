@@ -1,0 +1,3 @@
+turn on 10,10 through 20,20
+turn off 12,18 through 30,30
+toggle 10,16 through 14,22
