@@ -5,8 +5,8 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import aocutil.io.RegexUtil;
 import aocutil.object.LabeledObject;
+import aocutil.string.RegexMatcher;
 
 /**
  * Represents one of the Aunts called Sue
@@ -66,7 +66,7 @@ public class AuntSue extends LabeledObject {
 	 */
 	public static AuntSue fromString( final String input ) {
 		// first get the ID of this sue
-		final AuntSue sue = new AuntSue( Integer.parseInt( RegexUtil.extract( "Sue (\\d+):", input ) ) );
+		final AuntSue sue = new AuntSue( Integer.parseInt( RegexMatcher.extract( "Sue (\\d+):", input ) ) );
 		
 		// then get every remaining key: value pair in the input string
 		final Matcher m = Pattern.compile( "(\\w+): (-?\\d+)" ).matcher( input.substring( input.indexOf( ":" ) + 1 ) );

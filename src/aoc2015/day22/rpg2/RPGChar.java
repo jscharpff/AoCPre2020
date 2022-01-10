@@ -46,7 +46,7 @@ public class RPGChar extends LabeledObject {
 	 * @param charclass The class of the character
 	 * @param hp The initial hit points
 	 * @param weapdmg The base weapon damage, without items
-	 * @param armog The base armour rating, without items
+	 * @param armour The base armour rating, without items
 	 * @param mana The mana the character starts with
 	 */
 	public RPGChar( final String name, final RPGCharClass charclass, final int hp, final int weapdmg, final int armour, final int mana ) {
@@ -122,6 +122,7 @@ public class RPGChar extends LabeledObject {
 	 * Casts the specified spell
 	 * 
 	 * @param spell The spell to cast
+	 * @param target The target of the spell
 	 * @return True if the cast succeeded, false otherwise
 	 * @throws RPGCharacterDied 
 	 */
@@ -189,6 +190,8 @@ public class RPGChar extends LabeledObject {
 	 * Performs a melee attack
 	 * 
 	 * @param target The target of the attack
+	 * @throws RPGCharacterDied if the target died as a result of the melee
+	 *   attack 
 	 */
 	public void melee( final RPGChar target ) throws RPGCharacterDied {
 		if( charclass != RPGCharClass.Fighter ) throw new RuntimeException( "Invalid action for character class " + charclass );

@@ -72,6 +72,7 @@ public class Computer {
 	 * Reads a value from the register
 	 * 
 	 * @param r The register to read
+	 * @return The value read from the register
 	 */
 	public long read( final String r ) {
 		switch( r ) {

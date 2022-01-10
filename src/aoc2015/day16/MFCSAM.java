@@ -27,6 +27,7 @@ public class MFCSAM {
 	 * 
 	 * @param criteria The criteria that need to be matched, described via a 
 	 *   comma separated key: value pairs string
+	 * @param old True to use old filtering, false for new
 	 */
 	public void filter( final String criteria, final boolean old ) {
 		// translate criteria into a map

@@ -3,7 +3,7 @@ package aoc2015.day08;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import aocutil.io.RegexUtil;
+import aocutil.string.RegexMatcher;
 
 /**
  * Class that helps Santa escape/unescape his text messages to prepare them
@@ -39,7 +39,7 @@ public class StringEscaper {
 	 */
 	public static String unescape( final String input ) {
 		// get the value between quotes
-		String unescaped = RegexUtil.extract( "^\"(.*)\"$", input );
+		String unescaped = RegexMatcher.extract( "^\"(.*)\"$", input );
 		
 		// unescape hexadecimally encoded characters
 		Matcher m = Pattern.compile( "\\\\x([0-9a-f]{2})" ).matcher( unescaped );

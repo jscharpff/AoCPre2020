@@ -133,7 +133,7 @@ public class RPG2 {
 	 * Logs a message for the character (if logging is enabled)
 	 * 
 	 * @param character The character to which a log applies
-	 * @param msg The message to log
+	 * @param message The message to log
 	 */
 	public static void log( final RPGChar character, final String message ) {
 		if( !logging ) return;

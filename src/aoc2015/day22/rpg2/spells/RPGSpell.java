@@ -16,6 +16,7 @@ public abstract class RPGSpell extends LabeledObject {
 	 * Creates a new spell with the given name and mana consumption
 	 * 
 	 * @param spell The spell type
+	 * @param caster The character that cast the spell
 	 */
 	public RPGSpell( final RPGSpellType spell, final RPGChar caster ) {
 		super( spell.toString( ) );
@@ -27,6 +28,7 @@ public abstract class RPGSpell extends LabeledObject {
 	/**
 	 * Applies the spell
 	 * 
+	 * @param spell The type of spell that is to be cast
 	 * @param source The character that casts the spell
 	 * @param target The target of the spell
 	 * @return True if the cast was successful

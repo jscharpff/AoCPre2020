@@ -38,6 +38,7 @@ public class SeatingArranger {
 	 * 
 	 * @param likings The list of inter-people relationships, described by their
 	 *   happiness modifiers
+	 * @return The SeatingArranger from the input list
 	 */
 	public static SeatingArranger fromStringList( final List<String> likings ) {
 		int mapidx = 0;

@@ -2,11 +2,9 @@ package aoc2015.day02;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import aocutil.io.FileReader;
-import aocutil.io.RegexUtil;
+import aocutil.string.RegexMatcher;
 
 public class Day02 {
 
@@ -42,14 +40,12 @@ public class Day02 {
 		long wrapping = 0;
 		
 		// parse each present's dimensions
-		final Pattern pattern = Pattern.compile( "(\\d+)x(\\d+)x(\\d+)" );
 		for( final String s : input ) {
 			// try and match the string
-			final Matcher m = pattern.matcher( s );
-			if( !m.find( ) ) throw new RuntimeException( "Invalid present specfication: " + s );
+			final RegexMatcher rm = RegexMatcher.match( "(\\d+)x(\\d+)x(\\d+)", s );
 			
 			// read all dimensions and sort by size
-			final int[] dim = RegexUtil.readInts( m );
+			final int[] dim = rm.getInts( );
 			Arrays.sort( dim );
 			
 			// add the area of the box to the required wrapping paper
@@ -73,14 +69,12 @@ public class Day02 {
 		long ribbon = 0;
 		
 		// parse each present's dimensions
-		final Pattern pattern = Pattern.compile( "(\\d+)x(\\d+)x(\\d+)" );
 		for( final String s : input ) {
-			// parse the package dimensions
-			final Matcher m = pattern.matcher( s );
-			if( !m.find( ) ) throw new RuntimeException( "Invalid present specfication: " + s );
+			// try and match the string
+			final RegexMatcher rm = RegexMatcher.match( "(\\d+)x(\\d+)x(\\d+)", s );
 			
 			// read all dimensions and sort by size
-			final int[] dim = RegexUtil.readInts( m );
+			final int[] dim = rm.getInts( );
 			Arrays.sort( dim );
 			
 			// add the smallest length of wrapping paper to add

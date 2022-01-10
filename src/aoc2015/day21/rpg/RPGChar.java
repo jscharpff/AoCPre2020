@@ -33,7 +33,7 @@ public class RPGChar extends LabeledObject {
 	 * @param name The character's name
 	 * @param hp The initial hit points
 	 * @param weapdmg The base weapon damage, without items
-	 * @param armog The base armour rating, without items
+	 * @param armour The base armour rating, without items
 	 * @param gold The gold the character starts with
 	 */
 	public RPGChar( final String name, final int hp, final int weapdmg, final int armour, final int gold ) {

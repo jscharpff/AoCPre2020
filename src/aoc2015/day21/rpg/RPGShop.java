@@ -75,6 +75,7 @@ public class RPGShop {
 	 * Creates a new shop with the given list of items, described by strings
 	 * 
 	 * @param file The file that contains all items in the shop
+	 * @return The RPGShop
 	 * @throws IOException if the file reading failed
 	 */
 	public static RPGShop fromFile( final URL file ) throws IOException {

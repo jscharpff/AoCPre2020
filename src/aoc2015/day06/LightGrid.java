@@ -1,12 +1,10 @@
 package aoc2015.day06;
 
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 
 import aocutil.geometry.Coord2D;
 import aocutil.geometry.Square2D;
-import aocutil.io.RegexUtil;
+import aocutil.string.RegexMatcher;
 
 /**
  * Creates a new LightGrid that holds an array of lights
@@ -62,14 +60,12 @@ public class LightGrid {
 	 */
 	public void parseInstructions( final List<String> input ) {
 		// parse each instruction
-		final Pattern p = Pattern.compile( "(turn off|turn on|toggle) (\\d+),(\\d+) through (\\d+),(\\d+)" );
 		for( final String s : input ) {
-			final Matcher m = p.matcher( s );
-			if( !m.find( ) ) throw new RuntimeException( "Failed to parse instruction: " + s );
+			final RegexMatcher rm = RegexMatcher.match( "(turn off|turn on|toggle) (\\d+),(\\d+) through (\\d+),(\\d+)", s );
 
 			// convert into a square
-			final String action = m.group( 1 );
-			final int[] coords = RegexUtil.readInts( m, new int[] { 2, 3, 4, 5 } );
+			final String action = rm.get( 1 );
+			final int[] coords = rm.getInts( new int[] { 2, 3, 4, 5 } );
 			final Square2D area = new Square2D( coords[0], coords[1], coords[2], coords[3] );
 			
 			// perform the instruction

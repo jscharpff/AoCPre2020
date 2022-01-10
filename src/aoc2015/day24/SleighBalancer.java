@@ -22,7 +22,7 @@ public class SleighBalancer {
 	/**
 	 * Creates a new balancing aid for the given set of package weights
 	 * 
-	 * @param packages The weights of the packages to consider
+	 * @param packageweights The weights of the packages to consider
 	 * @param groups The number of groups to divider the packages into
 	 */
 	public SleighBalancer( final List<String> packageweights, final int groups ) {
@@ -100,7 +100,7 @@ public class SleighBalancer {
 		/** @return The total weight of the packages in the group */
 		public int getWeight( ) { return weight; }
 		
-		/** 2return The quantum entanglement of the packages */
+		/** @return The quantum entanglement of the packages */
 		public long getQuantumEntanglement( ) {
 			return packs.stream( ).mapToLong( x -> x ).reduce( Math::multiplyExact ).getAsLong( );
 		}

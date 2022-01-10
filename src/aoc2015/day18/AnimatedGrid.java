@@ -65,7 +65,7 @@ public class AnimatedGrid {
 				
 		// go over all lights to determine their new state
 		for( final Coord2D c : grid ) {
-			final int oncount = c.getNeighbours( true ).stream( ).mapToInt( x -> grid.get( x ) ? 1 : 0 ).reduce( 0, Math::addExact );
+			final int oncount = c.getAdjacent( true ).stream( ).mapToInt( x -> grid.get( x ) ? 1 : 0 ).reduce( 0, Math::addExact );
 			final boolean currstate = grid.get( c );
 			final boolean newstate;
 			if( currstate && (oncount == 2 || oncount == 3) ) {

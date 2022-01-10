@@ -1,10 +1,7 @@
 package aoc2015.day15.cookies;
 
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-import aocutil.io.RegexUtil;
 import aocutil.object.LabeledObject;
+import aocutil.string.RegexMatcher;
 
 /**
  * Class that represents a single ingredient and its cookie-enhancing
@@ -46,9 +43,8 @@ public class Ingredient extends LabeledObject {
 	 * @return The ingredient object
 	 */
 	public static Ingredient fromString( final String input ) {
-		final Matcher m = Pattern.compile( "(\\w+): capacity (-?\\d+), durability (-?\\d+), flavor (-?\\d+), texture (-?\\d+), calories (-?\\d+)" ).matcher( input );
-		if( !m.find( ) ) throw new IllegalArgumentException( "Invalid ingredient: " + input );
+		final RegexMatcher rm = RegexMatcher.match( "(\\w+): capacity (-?\\d+), durability (-?\\d+), flavor (-?\\d+), texture (-?\\d+), calories (-?\\d+)", input );
 		
-		return new Ingredient( m.group( 1 ), RegexUtil.readInts( m, new int[] { 2, 3, 4, 5, 6 } ) );
+		return new Ingredient( rm.get( 1 ), rm.getInts( new int[] { 2, 3, 4, 5, 6 } ) );
 	}
 }
