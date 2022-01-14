@@ -62,7 +62,7 @@ public class AirDuctSystem {
 		for( final Wire w : wires.keySet( ) ) {
 			Dwires[ w.ID ][ w.ID ] = -1;
 			
-			final Map<Coord2D, Long> D = BreadthFirstSearch.getDistances( wires.get( w ), wires.values( ), c -> ducts.getNeighbours( c, false, x -> x != T_WALL ) );
+			final Map<Coord2D, Long> D = BreadthFirstSearch.getDistances( wires.get( w ), wires.values( ), c -> ducts.getNeighbours( c, false, x -> ducts.get( x ) != T_WALL ) );
 			for( final Coord2D c : D.keySet( ) ) {
 				for( final Wire w2 : wires.keySet( ) ) {
 					if( w.equals( w2 ) ) continue;

@@ -1,0 +1,53 @@
+package aoc2017.day24;
+
+import java.util.List;
+
+import aocutil.io.FileReader;
+
+public class Day24 {
+
+	/**
+	 * Day 24 of the Advent of Code 2017
+	 * 
+	 * https://adventofcode.com/2017/day/24
+	 * 
+	 * @param args The command line arguments
+	 * @throws Exception
+	 */
+	public static void main( final String[] args ) throws Exception {
+		final List<String> ex_input = new FileReader( Day24.class.getResource( "example.txt" ) ).readLines( );
+		final List<String> input = new FileReader( Day24.class.getResource( "input.txt" ) ).readLines( );
+		
+		System.out.println( "---[ Part 1 ]---" );
+		System.out.println( "Example: " + part1( ex_input ) );
+		System.out.println( "Answer : " + part1( input ) );
+	
+		System.out.println( "\n---[ Part 2 ]---" );
+		System.out.println( "Example: " + part2( ex_input ) );
+		System.out.println( "Answer : " + part2( input ) );
+	}
+	
+	/**
+	 * Determines the strongest bridge we can make out of the components
+	 * 
+	 * @param input The available bridge pieces 
+	 * @return The strength of the strongest bridge we can make
+	 */
+	private static long part1( final List<String> input ) {
+		final BridgeBuilder b = new BridgeBuilder( input );
+		return b.getStrongest( ).getStrength( );
+	}
+	
+	/**
+	 * Determines the strength of the longest, strongest bridge we can make from
+	 * the components
+	 * 
+	 * @param input The available bridge pieces 
+	 * @return The strength of the strongest bridge which is also the longest in
+	 *   terms of number of components used
+	 */
+	private static long part2( final List<String> input ) {
+		final BridgeBuilder b = new BridgeBuilder( input );
+		return b.getLongest( ).getStrength( );
+	}
+}
