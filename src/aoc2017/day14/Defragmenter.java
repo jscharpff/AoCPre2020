@@ -71,7 +71,7 @@ public class Defragmenter {
 			if( visited.contains( c ) ) continue;
 			
 			// nope, explore all bits in this region
-			final Set<Coord2D> bits = BreadthFirstSearch.getReachable( c, c1 -> disk.getNeighbours( c1, false, disk::get ) );
+			final Set<Coord2D> bits = BreadthFirstSearch.getReachable( c, c1 -> disk.getNeighbours( c1, false, disk::get ) ).keySet( );
 			visited.addAll( bits );
 			regions++;
 		}

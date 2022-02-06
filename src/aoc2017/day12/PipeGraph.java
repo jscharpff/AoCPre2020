@@ -94,7 +94,7 @@ public class PipeGraph {
 	 */
 	private Set<Node> getCluster( final Node startnode ) {
 		// BFS search over nodes
-		return BreadthFirstSearch.getReachable( startnode, n -> n.getNeighbours( ) );
+		return BreadthFirstSearch.getReachable( startnode, n -> n.getNeighbours( ) ).keySet( );
 	}
 	
 	/** @return The graph as a string */
