@@ -199,11 +199,7 @@ public class ProgramTree {
 			// imbalance, or my own new weight that would fix it
 			return childweight != 0 ? childweight : badnode.weight + goodweight - badnode.carries; 
 		}
-		
-		
-		/** @return The node label */
-		private String getLabel( ) { return label; }
-		
+
 		/** @return The total number of children of this node, recursively */
 		private int countChildren( ) {
 			return children.size( ) + children.stream( ).mapToInt( PTNode::countChildren ).sum( );

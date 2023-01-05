@@ -32,6 +32,7 @@ public class ProgramDance {
 	 * accordingly
 	 * 
 	 * @param moves The dance move to process
+	 * @param rounds The number of rounds to dance
 	 * @return The resulting program listing
 	 */
 	public String dance( final Collection<String> moves, final long rounds ) {

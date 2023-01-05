@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.stream.IntStream;
 
-import aocutil.Util;
+import aocutil.collections.CollectionUtil;
 
 public class RTFState {	
 	/** The unique state string */
@@ -101,7 +101,7 @@ public class RTFState {
 		
 		// generate possible moves
 		final IntStream indexes = IntStream.range( 0, items.length ).filter( x -> items[x] == elevator );
-		final List<Set<Integer>> moves = Util.generateSubSets( new HashSet<>( indexes.boxed( ).toList( ) ), x -> x.size( ) == 1 || x.size( ) == 2 );
+		final List<Set<Integer>> moves = CollectionUtil.generateSubSets( new HashSet<>( indexes.boxed( ).toList( ) ), x -> x.size( ) == 1 || x.size( ) == 2 );
 		
 		// and try them both up and down, if valid
 		for( final int flinc : new int[] { -1, 1 } ) {			

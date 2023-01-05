@@ -48,7 +48,7 @@ public class Cart {
 	 */
 	public void move( final TrackLayout track ) {
 		// move the cart
-		pos = pos.moveDir( dir, 1 );
+		pos = pos.move( dir, 1 );
 
 		
 		final char t = track.get( pos );

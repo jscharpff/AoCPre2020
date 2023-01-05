@@ -7,7 +7,7 @@ import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import aocutil.Util;
+import aocutil.collections.CollectionUtil;
 import aocutil.string.StringUtil;
 
 /**
@@ -42,7 +42,7 @@ public class PasswordScrambler {
 		// generate all combinations of characters
 		final Set<Character> passchars = new HashSet<Character>( );
 		for( final char c : "abcdefgh".toCharArray( ) ) passchars.add( c );
-		final List<List<Character>> keys = Util.generatePermutations( passchars );
+		final List<List<Character>> keys = CollectionUtil.generatePermutations( passchars );
 		
 		// and try them all
 		for( final List<Character> key : keys ) {

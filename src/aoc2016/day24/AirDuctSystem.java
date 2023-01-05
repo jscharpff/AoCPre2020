@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import aocutil.Util;
 import aocutil.algorithm.BreadthFirstSearch;
+import aocutil.collections.CollectionUtil;
 import aocutil.geometry.Coord2D;
 import aocutil.grid.CoordGrid;
 import aocutil.object.LabeledObject;
@@ -87,7 +87,7 @@ public class AirDuctSystem {
 		wiresearch.remove( w0 );
 		
 		// generate all permutations of remaining wires
-		final List<List<Wire>> perms = Util.generatePermutations( wiresearch );
+		final List<List<Wire>> perms = CollectionUtil.generatePermutations( wiresearch );
 		long mindist = Long.MAX_VALUE;
 		for( final List<Wire> p : perms ) {
 			p.add( 0, w0 );

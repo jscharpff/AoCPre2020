@@ -81,7 +81,7 @@ public class ConstructionSite {
 					if( depth > 0 ) continue;
 					
 					final Direction dir = Direction.fromLetter( c );
-					pos = pos.moveDir( dir, 1 );
+					pos = pos.move( dir, 1 );
 					pathlen++;
 					if( !dist.hasValue( pos ) || dist.get( pos ) > pathlen ) {
 						// new location or shorter route, set minimal distance

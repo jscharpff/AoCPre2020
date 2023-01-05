@@ -15,6 +15,8 @@ public class NodePath {
 	
 	/**
 	 * Creates a new empty path starting from the given node
+	 * 
+	 * @param node The starting node
 	 */
 	public NodePath( final Node node ) {
 		this( new ArrayList<>( ) );
@@ -34,6 +36,7 @@ public class NodePath {
 	 * Creates a new path by extending this one with the given node
 	 * 
 	 * @param node The node to add
+	 * @return The new path, extended by the node
 	 */
 	public NodePath extend( final Node node ) {
 		final NodePath n = new NodePath( nodes );

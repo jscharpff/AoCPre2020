@@ -40,7 +40,7 @@ public class CaveBattle {
 	 * attack power... This function finds the minimal attack power that will
 	 * help the Elves win without any losses
 	 * 
-	 * @oaram initmap The initial map of the battle
+	 * @param initmap The initial map of the battle
 	 * @return The outcome of the winning battle with minimal ap
 	 */
 	public static long winningBattle( final List<String> initmap ) {		

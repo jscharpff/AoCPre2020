@@ -203,7 +203,7 @@ public class AssemBunnyAntenna {
 		 * Consumes a single output value
 		 * 
 		 * @param value The value to consume
-		 * @throws InterruptedException if the consumer wants to interrupt the
+		 * @throws InterruptException if the consumer wants to interrupt the
 		 *   program execution 
 		 */
 		public void output( final long value ) throws InterruptException;

@@ -34,7 +34,7 @@ public class Virus {
 	 * @param dist The distance to move
 	 */
 	public void move( final int dist ) {
-		pos = pos.moveDir( dir, dist );
+		pos = pos.move( dir, dist );
 	}
 	
 	/**

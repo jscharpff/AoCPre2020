@@ -87,7 +87,7 @@ public class TubeMaze {
 				System.out.print( c );
 			
 			// regular tile or letter, move a step
-			pos = pos.moveDir( dir, 1 );
+			pos = pos.move( dir, 1 );
 			length++;
 		}
 		System.out.println(  );

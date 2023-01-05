@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import aocutil.Util;
+import aocutil.collections.CollectionUtil;
 
 /**
  * Class that helps optimise the seating arrangement at Christmas dinner based
@@ -98,7 +98,7 @@ public class SeatingArranger {
 	 */
 	public String getBestSeating( ) {
 		// get all permutations of cities
-		final List<List<String>> seatings = Util.generatePermutations( peoplemap.keySet( ) );
+		final List<List<String>> seatings = CollectionUtil.generatePermutations( peoplemap.keySet( ) );
 		
 		// find the permutation that has the best liking rating
 		List<String> bestseating = null;

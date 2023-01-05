@@ -6,7 +6,7 @@ import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import aocutil.Util;
+import aocutil.collections.CollectionUtil;
 
 /**
  * Class that helps Santa optimise his delivery route
@@ -59,7 +59,7 @@ public class DeliveryRouter {
 	 */
 	public String getShortestRoute( ) {
 		// get all permutations of cities
-		final List<List<String>> routes = Util.generatePermutations( citymap.keySet( ) );
+		final List<List<String>> routes = CollectionUtil.generatePermutations( citymap.keySet( ) );
 		
 		// find the permutation that hasthe longest route length
 		List<String> bestroute = null;
@@ -84,9 +84,9 @@ public class DeliveryRouter {
 	 */
 	public String getLongestRoute( ) {
 		// get all permutations of cities
-		final List<List<String>> routes = Util.generatePermutations( citymap.keySet( ) );
+		final List<List<String>> routes = CollectionUtil.generatePermutations( citymap.keySet( ) );
 		
-		// find the permutation that hasthe longest route length
+		// find the permutation that has the longest route length
 		List<String> bestroute = null;
 		int maxdist = 0;
 		for( final List<String> route : routes ) {

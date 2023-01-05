@@ -122,7 +122,7 @@ public class HashKnot {
 	 * Convenient function that constructs a KnotHash object and uses it to hash
 	 * the input string
 	 * 
-	 * @param key The hash key input
+	 * @param input The hash key input
 	 * @return The resulting hash
 	 */
 	public static String hash( final String input ) {

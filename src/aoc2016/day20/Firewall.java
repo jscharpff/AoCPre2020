@@ -153,6 +153,7 @@ public class Firewall {
 		 * Merges this IP range with the other (partially) overlapping ranges
 		 * 
 		 * @param range The other IP range
+		 * @return The new combined range
 		 */
 		public IPRange merge( final IPRange range ) {
 			if( !overlaps( range) ) throw new IllegalArgumentException( "The IP Range " + range + " does not overlap with " + this );
